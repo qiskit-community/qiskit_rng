@@ -1,6 +1,9 @@
 # Qiskit Random Number Generation
 
-[![License](https://img.shields.io/github/license/qiskit-community/qiskit-aqt-provider.svg?style=popout-square)](https://opensource.org/licenses/Apache-2.0)
+[![License](https://img.shields.io/github/license/Qiskit/qiskit-ignis.svg?style=popout-square)](https://opensource.org/licenses/Apache-2.0)
+[![Build Status](https://github.com/qiskit-community/qiskit_rng/workflows/Tests/badge.svg?style=popout-square)](https://github.com/qiskit-community/qiskit_rng/actions)
+[![](https://img.shields.io/github/release/qiskit-community/qiskit_rng.svg?style=popout-square)](https://github.com/qiskit-community/qiskit_rng/releases)
+[![](https://img.shields.io/pypi/dm/qiskit_rng.svg?style=popout-square)](https://pypi.org/project/qiskit_rng/)
 
 Qiskit is an open-source framework for working with noisy intermediate-scale
 quantum computers (NISQ) at the level of pulses, circuits, and algorithms.
