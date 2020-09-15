@@ -1,0 +1,4 @@
+Sphinx>=3.0
+pydata_sphinx_theme
+sphinx-tabs>=1.1.11
+sphinx-autodoc-typehints

@@ -35,7 +35,7 @@ setup(
     long_description_content_type='text/markdown',
     url="https://github.com/qiskit-community/qiskit_rng",
     author="Qiskit Development Team",
-    author_email="qiskit@qiskit.org",
+    author_email="hello@qiskit.org",
     license="Apache 2.0",
     classifiers=[
         "Environment :: Console",
@@ -56,5 +56,10 @@ setup(
     install_requires=REQUIREMENTS,
     include_package_data=True,
     python_requires=">=3.6",
+    project_urls={
+        "Bug Tracker": "https://https://github.com/qiskit-community/qiskit_rng/issues",
+        "Documentation": "https://qiskit-rng.readthedocs.io",
+        "Source Code": "https://https://github.com/qiskit-community/qiskit_rng",
+    },
     zip_safe=False
 )
