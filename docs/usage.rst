@@ -61,7 +61,7 @@ Extractor Parameters
   is made using a secure channel.
 
 * privacy: Set to ``True`` to also perform privacy amplification and to ``False`` if the initial
-  WSR is assumed private already. If set to ``True`, the final output is provably both private and
+  WSR is assumed private already. If set to ``True``, the final output is provably both private and
   unbiased. If set to ``False``, the final output is provably unbiased.
 
 
