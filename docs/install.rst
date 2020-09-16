@@ -16,7 +16,8 @@ are installed with a single command.
 Install
 -------
 
-Installation of ``qiskit_rng`` is a simple call tp PyPI:
+Installation of ``qiskit_rng`` is accomplished with a simple call to ``pip``
+to download and install everything needed from PyPI:
 
 .. code-block:: bash
 
