@@ -17,7 +17,7 @@ import os
 from setuptools import setup, find_packages
 
 REQUIREMENTS = [
-    "qiskit-ibmq-provider>=0.8"
+    "qiskit-ibmq-provider>=0.9"
 ]
 
 # Read long description from README.
@@ -30,7 +30,7 @@ with open(README_PATH) as readme_file:
 setup(
     name="qiskit_rng",
     version=0.1,
-    description="Qiskit Random Number Generation.",
+    description="Qiskit Random Number Generator.",
     long_description=README,
     long_description_content_type='text/markdown',
     url="https://github.com/qiskit-community/qiskit_rng",
