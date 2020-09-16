@@ -8,7 +8,13 @@ Qiskit RNG (|version|)
   both functionality and API are likely to occur.
 
 
-Qiskit RNG is a collaboration between Cambridge Quantum Computing (CQC) and IBM Quantum 
+
+.. figure:: images/fuzzy.png
+  :align: center
+
+
+Qiskit RNG is a collaboration between `Cambridge Quantum Computing <https://cambridgequantum.com/>`_ (CQC)
+and `IBM Quantum <https://www.ibm.com/quantum-computing/>`_ 
 for generating certified quantum randomness using IBM Quantum systems running three-qubit
 GHZ states with random X- and Y-measurements.  Provided that the state is tripartite entangled,
 as measurement by a violation of the Mermin inequality (:math:`x,y\in \{1,2\}`):
@@ -21,6 +27,15 @@ the measured output can be certified quantum random for values :math:`2\sqrt{2} 
 state was truly tripartite entangled.  The maximum value :math:`M_{\rm obs} = 4` indicates maximum randomness, and
 and that the measurement outcomes are uniformly random. These "raw bits" are passed through a two-source randomness extractor
 that creates a reduced length uniform random distribution (if :math:`M_{\rm obs} \neq 4`) of bits.
+
+Further technical details maybe found in:
+`Foreman et al., "Practical randomness and privacy amplification", arXiv:2009.06551 <https://arxiv.org/abs/2009.06551>`_.
+
+``qiskit_rng`` has passed the following RNG test suites:
+
+- `Dieharder <https://webhome.phy.duke.edu/~rgb/General/dieharder.php>`_
+
+- `NIST Statistical Test Suite <https://csrc.nist.gov/projects/random-bit-generation/documentation-and-software>`_
 
 
 .. toctree::
