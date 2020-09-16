@@ -26,10 +26,16 @@ README_PATH = os.path.join(os.path.abspath(os.path.dirname(__file__)),
 with open(README_PATH) as readme_file:
     README = readme_file.read()
 
+version_path = os.path.abspath(os.path.join(
+    os.path.dirname(__file__), 'qiskit_rng',
+    'VERSION.txt'))
+
+with open(version_path, 'r') as fd:
+    version_str = fd.read().rstrip()
 
 setup(
     name="qiskit_rng",
-    version=0.1,
+    version=version_str,
     description="Qiskit Random Number Generator.",
     long_description=README,
     long_description_content_type='text/markdown',
