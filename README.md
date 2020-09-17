@@ -78,4 +78,4 @@ configurable. See documentation for some use case examples and parameter suggest
 [Qiskit]: https://qiskit.org
 [IBM Quantum Experience]: https://quantum-computing.ibm.com
 [Cambridge Quantum Computing]: https://cambridgequantum.com
-[Apache License 2.0]: https://github.com/Qiskit/qiskit-ibmq-provider/blob/master/LICENSE.txt
+[Apache License 2.0]: https://github.com/qiskit-community/qiskit_rng/blob/master/LICENSE.txt
