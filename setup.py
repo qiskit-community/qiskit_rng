@@ -17,7 +17,7 @@ import os
 from setuptools import setup, find_packages
 
 REQUIREMENTS = [
-    "qiskit-ibmq-provider>=0.10"
+    "qiskit-ibmq-provider>=0.9"
 ]
 
 # Read long description from README.
