@@ -61,10 +61,7 @@ If you have access to the CQC extractors, you can feed the outputs from the prev
 step to obtain higher quality random numbers:
 
 ```python
-print(rng_provider.random.services())  # Show a list of random services you have access to.
-extractor = rng_provider.random.cqc_extractor
-extractor_params = result.get_cqc_extractor_params()
-random_bits = extractor.run(*extractor_params)
+random_bits = output.extract(rng_provider)
 ```
 
 The code above uses the default parameter values, but the extractor is highly 
