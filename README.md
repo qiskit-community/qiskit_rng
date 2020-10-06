@@ -46,7 +46,7 @@ rng_provider = IBMQ.get_provider(hub='MY_HUB', group='MY_GROUP', project='MY_PRO
 backend = rng_provider.backends.ibmq_ourence
 
 generator = Generator(backend=backend)
-output = generator.sample(num_raw_bits=int(1024), fast_path=True).block_until_ready()
+output = generator.sample(num_raw_bits=1024).block_until_ready()
 print(output.mermin_correlator)
 ```
 
