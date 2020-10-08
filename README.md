@@ -67,6 +67,10 @@ random_bits = output.extract(rng_provider)
 The code above uses the default parameter values, but the extractor is highly 
 configurable. See documentation for some use case examples and parameter suggestions.
 
+## Documentation
+
+Usage and API documentation can be found [here](https://qiskit-rng.readthedocs.io/en/latest/).
+
 ## License
 
 [Apache License 2.0].
