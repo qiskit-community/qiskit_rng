@@ -24,9 +24,15 @@ The current workflow has three parts:
 
    .. code-block:: python
 
-      result = generator.sample(num_raw_bits=1024).block_until_ready()
+      output = generator.sample(num_raw_bits=1024).block_until_ready()
 
 3. Extract high quality random numbers from the generator output:
+
+   .. code-block:: python
+
+      random_bits = output.extract(rng_provider)
+
+   If you want to examine the final parameters passed to the extractor, you can use:
 
    .. code-block:: python
 

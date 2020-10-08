@@ -46,7 +46,7 @@ rng_provider = IBMQ.get_provider(hub='MY_HUB', group='MY_GROUP', project='MY_PRO
 backend = rng_provider.backends.ibmq_ourence
 
 generator = Generator(backend=backend)
-output = generator.sample(num_raw_bits=int(1024), fast_path=True).block_until_ready()
+output = generator.sample(num_raw_bits=1024).block_until_ready()
 print(output.mermin_correlator)
 ```
 
@@ -61,14 +61,15 @@ If you have access to the CQC extractors, you can feed the outputs from the prev
 step to obtain higher quality random numbers:
 
 ```python
-print(rng_provider.random.services())  # Show a list of random services you have access to.
-extractor = rng_provider.random.cqc_extractor
-extractor_params = result.get_cqc_extractor_params()
-random_bits = extractor.run(*extractor_params)
+random_bits = output.extract(rng_provider)
 ```
 
 The code above uses the default parameter values, but the extractor is highly 
 configurable. See documentation for some use case examples and parameter suggestions.
+
+## Documentation
+
+Usage and API documentation can be found [here](https://qiskit-rng.readthedocs.io/en/latest/).
 
 ## License
 

@@ -60,11 +60,9 @@ Quick start
   backend = rng_provider.backends.ibmq_ourence
 
   generator = Generator(backend=backend)
-  result = generator.sample(num_raw_bits=1024).block_until_ready()
+  output = generator.sample(num_raw_bits=1024).block_until_ready()
 
-  extractor = rng_provider.random.cqc_extractor
-  extractor_params = result.get_cqc_extractor_params()
-  random_bits = extractor.run(*extractor_params)
+  random_bits = output.extract(rng_provider)
 
 
 License
