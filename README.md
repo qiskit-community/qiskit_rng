@@ -61,7 +61,7 @@ If you have access to the CQC extractors, you can feed the outputs from the prev
 step to obtain higher quality random numbers:
 
 ```python
-random_bits = output.extract(rng_provider)
+random_bits = output.extract()
 ```
 
 The code above uses the default parameter values, but the extractor is highly 

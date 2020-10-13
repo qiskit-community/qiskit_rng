@@ -62,7 +62,7 @@ Quick start
   generator = Generator(backend=backend)
   output = generator.sample(num_raw_bits=1024).block_until_ready()
 
-  random_bits = output.extract(rng_provider)
+  random_bits = output.extract()
 
 
 License
