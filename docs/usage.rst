@@ -30,7 +30,7 @@ The current workflow has three parts:
 
    .. code-block:: python
 
-      random_bits = output.extract(rng_provider)
+      random_bits = output.extract()
 
    If you want to examine the final parameters passed to the extractor, you can use:
 

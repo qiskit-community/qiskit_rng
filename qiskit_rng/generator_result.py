@@ -27,7 +27,7 @@
 from typing import List, Optional, Callable, Tuple
 from math import floor
 
-from qiskit.providers.ibmq.accountprovider import AccountProvider
+from qiskit.providers.basebackend import BaseBackend
 from qiskit.providers.ibmq.exceptions import IBMQError
 
 from .utils import (bell_value, generate_wsr, get_extractor_bits, bitarray_to_bytes,
@@ -42,7 +42,8 @@ class GeneratorResult:
     def __init__(
             self,
             wsr: List[List[int]],
-            raw_bits_list: List[List[int]]
+            raw_bits_list: List[List[int]],
+            backend: BaseBackend
     ) -> None:
         """GeneratorResult constructor.
 
@@ -60,10 +61,12 @@ class GeneratorResult:
         Args:
             wsr: WSR used to generate the circuits.
             raw_bits_list: A list of formatted bits from job results.
+            backend: Backend used to generate the bits.
         """
         self.wsr = wsr
         self._raw_bits_list = raw_bits_list
         self.raw_bits = [bit for sublist in raw_bits_list for bit in sublist]
+        self.backend = backend
 
         self.losing_probability, self.winning_probability, self.mermin_correlator = \
             bell_value(wsr, raw_bits_list)
@@ -197,7 +200,6 @@ class GeneratorResult:
 
     def extract(
             self,
-            provider: AccountProvider,
             rate_sv: float = 0.95,
             expected_correlator: Optional[float] = None,
             epsilon_sec: float = 1e-30,
@@ -214,7 +216,6 @@ class GeneratorResult:
             to the service.
 
         Args:
-            provider: IBMQ service provider.
             rate_sv: Assumed randomness rate of the initial WSR as a Santha-Vazirani source.
             expected_correlator: The expected correlator value.
                 :data:`qiskit_rng.constants.EXPECTED_CORRELATOR`
@@ -241,7 +242,7 @@ class GeneratorResult:
             RNGNotAuthorizedError: If you are not authorized to use the CQC extractor.
         """
         try:
-            extractor = provider.random.get_service('cqc_extractor')
+            extractor = self.backend.provider().random.get_service('cqc_extractor')
         except IBMQError:
             raise RNGNotAuthorizedError("You are not authorized to use the CQC extractor.")
 

@@ -89,7 +89,8 @@ class GeneratorJob:
                 os.remove(self.saved_fn)
             except Exception:   # pylint: disable=broad-except
                 logger.warning("Unable to delete file %s", self.saved_fn)
-        return GeneratorResult(wsr=self.formatted_wsr, raw_bits_list=self.raw_bits_list)
+        return GeneratorResult(wsr=self.formatted_wsr, raw_bits_list=self.raw_bits_list,
+                               backend=self.backend)
 
     def _format_wsr(self):
         """Format the wsr.
