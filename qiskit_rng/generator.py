@@ -127,7 +127,7 @@ class Generator:
         Raises:
             ValueError: If an input argument is invalid.
         """
-        if not isinstance(self.backend, BaseBackend) or \
+        if not isinstance(self.backend, BaseBackend) and \
                 (HAS_V2_BACKEND and not isinstance(self.backend, Backend)):
             raise ValueError("Backend needs to be a Qiskit `BaseBackend` or `Backend` instance.")
 
