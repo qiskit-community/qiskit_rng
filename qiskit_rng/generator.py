@@ -41,6 +41,12 @@ from qiskit.providers.ibmq.accountprovider import AccountProvider
 from .generator_job import GeneratorJob
 from .utils import generate_wsr
 
+try:
+    from qiskit.providers.backend import Backend
+    HAS_V2_BACKEND = True
+except ImportError:
+    HAS_V2_BACKEND = False
+
 logger = logging.getLogger(__name__)
 
 
@@ -121,8 +127,9 @@ class Generator:
         Raises:
             ValueError: If an input argument is invalid.
         """
-        if not isinstance(self.backend, BaseBackend):
-            raise ValueError("Backend needs to be a `BaseBackend` instance.")
+        if not isinstance(self.backend, BaseBackend) or \
+                (HAS_V2_BACKEND and not isinstance(self.backend, Backend)):
+            raise ValueError("Backend needs to be a Qiskit `BaseBackend` or `Backend` instance.")
 
         max_shots = self.backend.configuration().max_shots
         num_raw_bits_qubit = int((num_raw_bits + 2)/3)
