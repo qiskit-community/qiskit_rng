@@ -34,7 +34,7 @@ Sphinx documentation builder
 """
 
 # The short X.Y version
-version = "0.2.0"
+version = "0.2.1"
 
 
 rst_prolog = """
