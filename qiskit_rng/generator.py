@@ -173,7 +173,7 @@ class Generator:
         Returns:
             An IBMQ managed job set or a job.
         """
-        transpiled = transpile(circuits, backend=self.backend, optimization_level=2)
+        transpiled = transpile(circuits, backend=self.backend, optimization_level=1)
         transpiled = [transpiled] if not isinstance(transpiled, list) else transpiled
 
         if isinstance(self.backend, IBMQBackend):
