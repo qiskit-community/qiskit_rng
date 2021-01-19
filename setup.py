@@ -63,9 +63,9 @@ setup(
     include_package_data=True,
     python_requires=">=3.6",
     project_urls={
-        "Bug Tracker": "https://https://github.com/qiskit-community/qiskit_rng/issues",
+        "Bug Tracker": "https://github.com/qiskit-community/qiskit_rng/issues",
         "Documentation": "https://qiskit-rng.readthedocs.io",
-        "Source Code": "https://https://github.com/qiskit-community/qiskit_rng",
+        "Source Code": "https://github.com/qiskit-community/qiskit_rng",
     },
     zip_safe=False
 )
