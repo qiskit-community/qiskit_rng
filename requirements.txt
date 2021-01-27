@@ -1,1 +1,2 @@
 qiskit-ibmq-provider>=0.10
+qiskit-terra>=0.16.2
