@@ -31,7 +31,7 @@ import os
 from itertools import product
 from typing import List, Tuple, Callable, Optional, Any, Union
 
-from qiskit import QuantumCircuit, transpile, assemble
+from qiskit import QuantumCircuit, transpile
 from qiskit.providers.basebackend import BaseBackend
 from qiskit.providers.basejob import BaseJob
 from qiskit.providers.ibmq.ibmqbackend import IBMQBackend
@@ -181,7 +181,7 @@ class Generator:
                                        job_tags=[self._job_tag], memory=True)
             logger.info("Jobs submitted to %s. Job set ID is %s.", self.backend, job.job_set_id())
         else:
-            job = self.backend.run(circuits, memory=True)
+            job = self.backend.run(circuits, shots=shots, noise_model=self.noise_model, memory=True)
             logger.info("Jobs submitted to %s. Job ID is %s.", self.backend, job.job_id())
 
         return job
