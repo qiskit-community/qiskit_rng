@@ -180,9 +180,12 @@ class Generator:
             job = self.job_manager.run(transpiled, backend=self.backend, shots=shots,
                                        job_tags=[self._job_tag], memory=True)
             logger.info("Jobs submitted to %s. Job set ID is %s.", self.backend, job.job_set_id())
-        else:
+        elif isinstance(self.backend, BaseBackend):
             job = self.backend.run(assemble(transpiled, backend=self.backend, shots=shots,
                                             memory=True, noise_model=self.noise_model))
+        else:
+            job = self.backend.run(transpiled, shots=shots, memory=True,
+                                   noise_model=self.noise_model)
             logger.info("Jobs submitted to %s. Job ID is %s.", self.backend, job.job_id())
 
         return job
